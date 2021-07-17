@@ -1,0 +1,4 @@
+#ifndef COSTUMSTYLE_H
+#define COSTUMSTYLE_H
+
+#endif // COSTUMSTYLE_H

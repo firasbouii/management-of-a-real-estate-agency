@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Admin</class>
+ <widget class="QMainWindow" name="Admin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1061</width>
+    <height>683</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>1041</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+    position: absolute;
+    top: -0.5em;
+}
+
+QTabWidget::tab-bar {
+    alignment: center;
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}
+QTabBar::tab { height: 50px; width: 100px; }</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>256</width>
+        <height>183</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="testing">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>230</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Testing</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QTableWidget" name="ReservationTable">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>421</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QTableView {
+     selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                 stop: 0 #FF92BB, stop: 1 white);
+ }</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LoadReservation">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>40</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientTerrain">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientEntrepot">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientAppartemet">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientMaison">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AccepterRes">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>70</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Accepter</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientMaison_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>440</y>
+        <width>791</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientAppartemet_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>440</y>
+        <width>791</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LoadProposition">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>120</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AccepterPro">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>150</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Accepter</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientEntrepot_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>440</y>
+        <width>791</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="PropositionTable">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>30</y>
+        <width>401</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientTerrain_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>440</y>
+        <width>791</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>10</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Proposition</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reservation</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>180</y>
+        <width>391</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QTableWidget" name="bien_table">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>110</y>
+        <width>611</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>23</number>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>20</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>70</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Vente</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>70</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Location</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>70</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Disponible</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioEntrepot">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>21</y>
+        <width>65</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Entrepot</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calculEntrepot">
+      <property name="geometry">
+       <rect>
+        <x>82</x>
+        <y>21</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(0)</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioAppartement">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>51</y>
+        <width>86</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Appartement</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calculAppartement">
+      <property name="geometry">
+       <rect>
+        <x>103</x>
+        <y>51</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(0)</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioMaison">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>81</y>
+        <width>56</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Maison</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calculMaison">
+      <property name="geometry">
+       <rect>
+        <x>73</x>
+        <y>81</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(0)</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioTerrain">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>111</y>
+        <width>57</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Terrain</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calculTerrain">
+      <property name="geometry">
+       <rect>
+        <x>74</x>
+        <y>111</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(0)</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QTableWidget" name="tablew2">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>60</y>
+        <width>671</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="rowCount">
+       <number>0</number>
+      </property>
+      <property name="columnCount">
+       <number>7</number>
+      </property>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>25</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>90</number>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>23</number>
+      </attribute>
+      <attribute name="verticalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+     <widget class="QPushButton" name="LoadClient">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>250</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>171</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Recherche</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ClientName">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>40</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ClientNom">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>80</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Prenom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>47</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>250</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Supprimer</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="PropositionTable_2">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>330</y>
+        <width>291</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ReservationTable_2">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>330</y>
+        <width>291</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QTableView {
+     selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                 stop: 0 #FF92BB, stop: 1 white);
+ }</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>40</y>
+        <width>321</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nos Clients</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>310</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Les RESERVATIONS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>310</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Les PROPOSITIONS</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QTableWidget" name="LocationTable">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>881</width>
+        <height>192</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="VenteTable">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>270</y>
+        <width>881</width>
+        <height>192</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="loadContratLoc">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>30</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LoadContratVente">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>290</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientTerrain_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientMaison_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientAppartemet_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="ClientEntrepot_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>771</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Contrat Location</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Contrat Vente</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>500</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Details sur le bien concerné</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>10</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>déconnexion</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1061</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
